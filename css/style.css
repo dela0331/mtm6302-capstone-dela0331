@@ -7,7 +7,7 @@ body{
 
 .container{
     background-color:#B51200;
-    padding:20px 0px 20px 20px;
+    padding:20px;
 }
 
 header{
@@ -18,12 +18,24 @@ header{
 
 }
 
-.logo{
-    height: 60px;
+header img{
+    height:60px;
+    transition:0.15s;
+}
+
+header img:hover,
+header img:focus{
+    height:66px;
+    cursor:pointer;
+}
+
+header img:active{
+    color-scheme:#B51200;
+    filter:brightness(0.2);
 }
 
 h1{
-    font-size:60px;
+    font-size:46px;
     margin:0 auto;
     padding-left:40px;
     padding-right:40px;
@@ -33,12 +45,87 @@ h1{
     font-style: normal;
 }
 
+h2{
+    padding:0 0 0 10px;
+    text-align:center;
+    font-weight:bold
+}
+
+.box img{
+    height:140px;
+    width:140px;
+}
+
+.box-bottom{
+    display:flex;
+    flex-direction: column;
+    justify-content:right;
+    align-items:right;
+
+}
+
+.box-bottom button{
+    background-color:#07202A;
+    text-decoration:none;
+    color:white;
+    font-size:20px;
+    background-color:#000000;
+    border:none;
+    transition:0.15s;
+    width:100px;
+    align-items:right;
+    justify-content:right;
+
+}
+
+.box-bottom button:hover,
+.box-bottom button:focus{
+    cursor:pointer;
+    background-color:#B51200;
+}
+
+.box-bottom button:active{
+    background-color: black;
+}
+
+.img-n-name dl{
+    text-align:right;
+    padding:0 0 0 20px;
+}
+
+.box p{
+    padding:10px 0 10px 0;
+    text-wrap:wrap;
+    width:200px;
+}
+
 .box{
+    height:220px;
+    margin:0 auto;
     padding:20px;
-    width:calc(100% - 60px);
+    font-size:16px;
+    display:flex;
+    flex-direction:column;
     background-color:#D2F7FF;
-    clip-path: polygon(0 0, 100% 0%, 100% 100%, 30px 100%, 0 230px);
+    clip-path: polygon(0 0, 100% 0%, 100% 100%, 35px 100%, 0 220px);
     margin-bottom:20px;
+    transition:0.15s;
+    max-width:400px;
+}
+
+.box:hover,
+.box:focus{
+    cursor:pointer;
+    padding:28px;
+    clip-path: polygon(0 0, 100% 0%, 100% 100%, 45px 100%, 0 230px);
+}
+
+.box:active{
+    background-color:rgb(157, 195, 202);
+}
+
+.img-n-name{
+    display:flex;
 }
 
 footer{
@@ -49,9 +136,57 @@ footer{
     text-decoration:underline;
 }
 
-button{
+footer button{
     background-color:transparent;
+    border:none;
+    color:white;
+    font-size:20px;
+    text-decoration:underline;
+    transition:0.15s;
 }
+
+footer button:hover,
+footer button:focus{
+    font-size:22px;
+    cursor:pointer;
+}
+
+footer button:active{
+    color:#07202A;
+
+}
+
+@media screen and (min-width: 858px) {
+
+    .container{
+        margin:0 auto;
+        padding-left:20px;
+        padding-right:20px;
+        justify-content:center;
+        display:flex;
+        flex-wrap:wrap;
+        transition:0.15s;
+    }
+    .box{
+        box-sizing:content-box;
+        width:320px;
+        height:200px;
+        margin-left:10px;
+        margin-right:10px;
+        padding:20px;
+        transition:0.15s;
+    }
+
+    .box:hover,
+    .box:focus{
+        padding:20px;
+        margin:10px;
+        clip-path: polygon(0 0, 100% 0%, 100% 100%, 45px 100%, 0 210px);
+    }
+
+    h1{
+        font-size:60px;
+  }
 
 
 
