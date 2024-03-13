@@ -1,0 +1,59 @@
+body{
+    background-color:#07202A;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    margin-left:20px;
+    margin-right:20px;
+}
+
+.container{
+    background-color:#B51200;
+    padding:20px 0px 20px 20px;
+}
+
+header{
+    background-color:#07202A;
+    display:flex;
+    align-items:center;
+    padding:20px;
+
+}
+
+.logo{
+    height: 60px;
+}
+
+h1{
+    font-size:60px;
+    margin:0 auto;
+    padding-left:40px;
+    padding-right:40px;
+    color:white;
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 200;
+    font-style: normal;
+}
+
+.box{
+    padding:20px;
+    width:calc(100% - 60px);
+    background-color:#D2F7FF;
+    clip-path: polygon(0 0, 100% 0%, 100% 100%, 30px 100%, 0 230px);
+    margin-bottom:20px;
+}
+
+footer{
+    color:white;
+    background-color: #B51200;
+    text-align:center;
+    padding-bottom:40px;
+    text-decoration:underline;
+}
+
+button{
+    background-color:transparent;
+}
+
+
+
+
+
