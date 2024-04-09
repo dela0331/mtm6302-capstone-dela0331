@@ -58,9 +58,8 @@ h2{
 
 .box-bottom{
     display:flex;
-    flex-direction: column;
-    justify-content:right;
-    align-items:right;
+    flex-direction:row;
+    justify-content:space-between;
 
 }
 
@@ -97,6 +96,7 @@ h2{
     padding:10px 0 10px 0;
     text-wrap:wrap;
     width:200px;
+    flex-grow:1;
 }
 
 .box{
@@ -113,15 +113,16 @@ h2{
     max-width:400px;
 }
 
-.box:hover,
-.box:focus{
-    cursor:pointer;
-    padding:28px;
-    clip-path: polygon(0 0, 100% 0%, 100% 100%, 45px 100%, 0 230px);
+.caught{
+    background-color:#f7efaa;
 }
 
-.box:active{
-    background-color:rgb(157, 195, 202);
+
+
+.box:hover,
+.box:focus{
+    padding:28px;
+    clip-path: polygon(0 0, 100% 0%, 100% 100%, 45px 100%, 0 230px);
 }
 
 .img-n-name{
@@ -188,7 +189,7 @@ footer button:active{
         font-size:60px;
   }
 
-
+}
 
 
 
