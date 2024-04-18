@@ -151,7 +151,7 @@ if(event.target.classList.contains('pop-up')){
     
     
     const popInfo = document.querySelector('.overlay')
-    html.push("hello");
+    html.push('');
     
     
 }
