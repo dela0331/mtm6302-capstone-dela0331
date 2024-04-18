@@ -18,6 +18,41 @@ header{
 
 }
 
+.box{
+    height:220px;
+    margin:0 auto;
+    padding:20px;
+    font-size:16px;
+    display:flex;
+    flex-direction:column;
+    background-color:#D2F7FF;
+    clip-path: polygon(0 0, 100% 0%, 100% 100%, 35px 100%, 0 220px);
+    margin-bottom:20px;
+    transition:0.15s;
+    max-width:400px;
+}
+
+.hidden{
+    display:none;
+    background-color: #07202A;
+}
+
+.overlay{
+    display:flex;
+    background-color:#4094b6;
+    width:calc(100% - 40px) !important;
+    height:100% !important;
+    max-width:800px;
+    margin:0 auto;
+    
+}
+
+
+
+.full{
+    background-color: #07202A;
+}
+
 header img{
     height:60px;
     transition:0.15s;
@@ -93,10 +128,6 @@ margin-top:40px;
     background-color:#660a00;
 }
 
-.box-bottom button:active{
-    background-color: black;
-}
-
 .box h2{
     flex-grow:2;
 }
@@ -106,20 +137,6 @@ margin-top:40px;
     text-wrap:wrap;
     width:200px;
     flex-grow:1;
-}
-
-.box{
-    height:220px;
-    margin:0 auto;
-    padding:20px;
-    font-size:16px;
-    display:flex;
-    flex-direction:column;
-    background-color:#D2F7FF;
-    clip-path: polygon(0 0, 100% 0%, 100% 100%, 35px 100%, 0 220px);
-    margin-bottom:20px;
-    transition:0.15s;
-    max-width:400px;
 }
 
 .caught{

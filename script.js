@@ -4,10 +4,11 @@ function parseUrl (url) {
     return url.substring(url.substring(0, url.length - 2).lastIndexOf('/') + 1, url.length - 1)
   }
 
+
 function htmlTemplate(pokemons) {
 const html = []
 console.log(pokemons)
-for(const pokemon of pokemons ){
+for(const pokemon of pokemons){
     // console.log(pokemon)
         let id = parseUrl(pokemon.url)
                 html.push(`
@@ -19,12 +20,14 @@ for(const pokemon of pokemons ){
                         <pre class="name">
                         ${pokemon.name}
                         </pre>
+                        <div class="desc">
+                        </div>
                     </div>
             
                     <div class="box-bottom">     
                         <button class="catch catch-btn" data-pokemonname = "${pokemon.name}" data-pokemonurl = "${pokemon.url}">Pokeball!</button>
 
-                        <button class="catch pop-up" data-pokemonname = "${pokemon.name}" data-pokemonurl = "${pokemon.url}">See more</button>
+                        <button class="catch pop-up" data-pokemonname = "${pokemon.name}" data-pokemonurl = "${pokemon.url}">...</button>
                     </div>
                 </div>
                 `)
@@ -48,46 +51,12 @@ async function fetchData (url) {
   };
 
 
-//alternate --
-// function fetchData(){
-//     fetch('https://pokeapi.co/api/v2/pokemon?limit=1000&offset=0')
-//     .then(response => response.json())
-//     .then(data => console.log(data))
-// }
-
-
 fetchData('https://pokeapi.co/api/v2/pokemon?limit=20&offset=0');
 
 
 
 
 const container = document.getElementById('container')
-
-// //creates pokebox
-// function createPokeBox(){
-//     container.innerHTML += `
-//     <div class="box">
-//         <div class="img-n-name">
-//             <img src="assets/square.png" alt="pokemon">
-//             <pre class="name">
-            
-//             </pre>
-//         </div>
-
-//         <div class="box-bottom">     
-//             <button class="catch catch-btn">Catch</button>
-//         </div>
-//     </div>
-//     `
-// }
-
-// displays pokebox
-// for (let i = 0; i < 20; i++) {
-//     createPokeBox()
-// }
-
-
-// pokemon catch / release button
 
 
 let boolean = false
@@ -123,12 +92,6 @@ container.addEventListener('click', function (event) {
         localStorage.setItem("Caught-Pokemons",JSON.stringify(savedPokemons))
     }
 
-
-
-    if(event.target.classList.contains('pop-up')){
-
-        console.log("tbc")
-    }
 });
 
 const caughtPageIcon = document.querySelector('.icon')
@@ -148,15 +111,60 @@ caughtPageIcon.addEventListener('click', function(){
 
 
 
+//second async
+async function fetchInfo(id) {
+    
+    const responseInfo = await fetch(`https://pokeapi.co/api/v2/pokemon-species/${id}`)
+
+    const jsonInfo = await responseInfo.json(info);
+    
+    const popInfo = document.querySelector('.desc')
+    popInfo.push("test")
+
+
+  };
+
+  
+
+//pop up
+container.addEventListener('click', function (event) {
+    const popButton = event.target
+    const pokeBox = event.target.closest('.box')
+    const allBox = document.getElementsByClassName('box')
+    const footer = document.querySelector("footer")
+
+if(event.target.classList.contains('pop-up')){
+
+    container.classList.toggle("full");
+    pokeBox.classList.toggle("overlay");
+    pokeBox.classList.toggle("info");
+    footer.classList.toggle("hidden");
+    caughtPageIcon.classList.toggle("hidden");
+
+    
+    
+    for (let i = 0; i < allBox.length; i++) {
+        allBox[i].classList.toggle("hidden");
+    }
+
+
+    
+    
+    const popInfo = document.querySelector('.overlay')
+    html.push("hello");
+    
+    
+}
+});
 
 
 //see more button
 const moreButton = document.getElementById("more")
 
-moreButton.addEventListener('click', function () {
+moreButton.addEventListener('click', function() {
 console.log(moreButton.dataset.next)
-    fetchData (moreButton.dataset.next) 
-
-    // htmlTemplate()
+fetchData (moreButton.dataset.next) 
 
 });
+
+
