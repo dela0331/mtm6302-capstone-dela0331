@@ -18,6 +18,41 @@ header{
 
 }
 
+.box{
+    height:220px;
+    margin:0 auto;
+    padding:20px;
+    font-size:16px;
+    display:flex;
+    flex-direction:column;
+    background-color:#D2F7FF;
+    clip-path: polygon(0 0, 100% 0%, 100% 100%, 35px 100%, 0 220px);
+    margin-bottom:20px;
+    transition:0.15s;
+    max-width:400px;
+}
+
+.hidden{
+    display:none;
+    background-color: #07202A;
+}
+
+.overlay{
+    display:flex;
+    background-color:#4094b6;
+    width:calc(100% - 40px) !important;
+    height:100% !important;
+    max-width:800px;
+    margin:0 auto;
+    
+}
+
+
+
+.full{
+    background-color: #07202A;
+}
+
 header img{
     height:60px;
     transition:0.15s;
@@ -52,8 +87,9 @@ h2{
 }
 
 .box img{
-    height:140px;
-    width:140px;
+    height:110px;
+    width:90px;
+    object-fit:cover;
 }
 
 .box-bottom button{
@@ -67,17 +103,29 @@ h2{
     width:140px;
     align-items:right;
     justify-content:right;
+    padding-top:10px;
+    padding-bottom:10px;
 
+}
+
+.name{
+    font-weight:bold;
+    font-size:14px;
+    text-transform:capitalize;
+    padding:0;
+    align-self:center;
+}
+
+.box-bottom{
+display:flex;
+justify-content:space-between;
+margin-top:40px;
 }
 
 .box-bottom button:hover,
 .box-bottom button:focus{
     cursor:pointer;
-    background-color:#B51200;
-}
-
-.box-bottom button:active{
-    background-color: black;
+    background-color:#660a00;
 }
 
 .box h2{
@@ -91,22 +139,12 @@ h2{
     flex-grow:1;
 }
 
-.box{
-    height:220px;
-    margin:0 auto;
-    padding:20px;
-    font-size:16px;
-    display:flex;
-    flex-direction:column;
-    background-color:#D2F7FF;
-    clip-path: polygon(0 0, 100% 0%, 100% 100%, 35px 100%, 0 220px);
-    margin-bottom:20px;
-    transition:0.15s;
-    max-width:400px;
-}
-
 .caught{
     background-color:#f7efaa;
+}
+
+.caught button{
+    background-color:#B51200
 }
 
 .box:hover,
